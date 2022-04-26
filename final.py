@@ -93,11 +93,9 @@ sgd_model = SGDClassifier(loss ='log',penalty='l2', max_iter=10)
 sgd_model.fit(X_train,y_train) 
 
 import pickle
-# open a file, where you ant to store the data
 file = open('rr_review_sgd.pkl', 'wb')
-
-# dump information to that file
 pickle.dump(sgd_model, file)
+sgd = pickle.load(open('rr_review_sgd.pkl','rb'))
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -109,11 +107,6 @@ NLP Bengali Sentiment Analysis Mini Project
 input = st.text_input('Enter your sentence in the Bengali Language')
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# loading the model using pickle
-
-sgd = pickle.load(open('rr_review_sgd.pkl','rb'))
-
-
 # predict function
 
 def predict(text):
