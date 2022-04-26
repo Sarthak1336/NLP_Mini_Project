@@ -80,7 +80,8 @@ dataset = dataset.reset_index(drop = True)
 lables = label_encoding(dataset.Sentiment,False)
 # Split the Feature into train and test set
 
-X_train,X_test,y_train,y_test = train_test_split(feature_space,sentiment,train_size = 0.8,
+cv,feature_vector = calc_trigram_tfidf(dataset.cleaned)
+X_train,X_test,y_train,y_test = train_test_split(feature_space=feature_vector,sentiment,train_size = 0.8,
                                                   test_size = 0.2,random_state =0)
 
 from sklearn.linear_model import SGDClassifier
