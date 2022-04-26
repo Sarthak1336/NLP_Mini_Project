@@ -53,16 +53,6 @@ def process_reviews(input,stopwords,removing_stopwords):
     return reviews    
 
 def calc_trigram_tfidf(reviews):
-    """
-    This function will return the tf-idf value of the bigram features . 
-    
-    Args:
-        reviews: a list of cleaned reviews   
-        
-    Returns:
-        tfidf: a instance of TfidfVectorizer
-        X : Tri-gram Feature Vector (sparse matrix)
-    """
     tfidf = TfidfVectorizer(ngram_range=(1,3),use_idf=True,tokenizer=lambda x: x.split()) 
     X = tfidf.fit_transform(reviews)
     
@@ -80,6 +70,12 @@ def label_encoding(sentiment,bool):
             print(sentiment[i],' ', encoded_labels[i],'\n')
 
     return labels  
+
+data = pd.read_excel('bengali.xlsx')
+data['cleaned'] = data['Reviews'].apply(process_reviews,stopwords = stopwords_list,removing_stopwords = True)    
+data['length'] = data['cleaned'].apply(lambda x:len(x.split()))
+dataset = data.loc[data.length>2]
+dataset = dataset.reset_index(drop = True)
 
 lables = label_encoding(dataset.Sentiment,False)
 # Split the Feature into train and test set
