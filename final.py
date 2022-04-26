@@ -17,6 +17,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import sklearn.linear_model._stochastic_gradient
 from sklearn.linear_model import SGDClassifier
 import json
+from sklearn.model_selection import train_test_split
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 stopwords_list ='stopwords-bn.txt'
