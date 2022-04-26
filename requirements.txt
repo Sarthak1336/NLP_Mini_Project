@@ -10,3 +10,4 @@ tornado==6.1
 traitlets==5.1.1
 wcwidth==0.2.5
 scikit-learn==1.0.2
+openpyxl==3.0.9
