@@ -13,7 +13,6 @@ import six
 import re
 import tornado
 from sklearn.feature_extraction.text import TfidfVectorizer
-import scikit-learn
 
 import json
 
