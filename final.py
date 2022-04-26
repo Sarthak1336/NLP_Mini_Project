@@ -88,7 +88,7 @@ X_train,X_test,y_train,y_test = train_test_split(feature_space,sentiment,train_s
 
 from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import accuracy_score
-import sklearn.linear_model.stochastic_gradient
+import sklearn.linear_model._stochastic_gradient
 sgd_model = SGDClassifier(loss ='log',penalty='l2', max_iter=10)
 sgd_model.fit(X_train,y_train) 
 
