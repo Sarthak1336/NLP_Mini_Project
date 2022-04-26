@@ -93,9 +93,11 @@ sgd_model = SGDClassifier(loss ='log',penalty='l2', max_iter=10)
 sgd_model.fit(X_train,y_train) 
 
 import pickle
-file = open('rr_review_sgd.pkl', 'wb')
-sgd = pickle.load()
-pickle.dump(sgd_model, file)
+
+with open('rr_review_sgd.pkl', 'wb') as files:
+    pickle.dump(sgd, files)
+
+sgd = pickle.load(open('rr_review_sgd.pkl', 'rb'))
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
