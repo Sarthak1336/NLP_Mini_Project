@@ -23,7 +23,7 @@ from sklearn.model_selection import train_test_split
 stopwords_list ='stopwords-bn.txt'
 
 def cleaned_reviews(input):
-    review = review.replace('\n', '') #removing new line 
+    input = input.replace('\n', '') #removing new line 
     input = re.sub('[^\u0980-\u09FF]',' ',str(input)) #removing unnecessary punctuation
     return input
 
