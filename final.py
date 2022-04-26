@@ -87,16 +87,16 @@ X_train,X_test,y_train,y_test = train_test_split(feature_space,sentiment,train_s
                                                   test_size = 0.2,random_state =0)
 
 from sklearn.linear_model import SGDClassifier
-#from sklearn.metrics import accuracy_score
-#sgd_model = SGDClassifier(loss ='log',penalty='l2', max_iter=10)
-#sgd_model.fit(X_train,y_train) 
+from sklearn.metrics import accuracy_score
+sgd_model = SGDClassifier(loss ='log',penalty='l2', max_iter=10)
+sgd_model.fit(X_train,y_train) 
 
 import pickle
 # open a file, where you ant to store the data
 file = open('rr_review_sgd.pkl', 'wb')
 
 # dump information to that file
-#pickle.dump(sgd_model, file)
+pickle.dump(sgd_model, file)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
