@@ -6,7 +6,7 @@ import pickle
 import pickleshare
 import pygments
 import backcall
-
+from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 import numpy as np
 import six
@@ -66,6 +66,28 @@ def calc_trigram_tfidf(reviews):
     X = tfidf.fit_transform(reviews)
     
     return tfidf,X
+
+def label_encoding(sentiment,bool):
+    le = LabelEncoder()
+    le.fit(sentiment)
+    encoded_labels = le.transform(sentiment)
+    labels = np.array(encoded_labels) # Converting into numpy array
+    class_names =le.classes_ ## Define the class names again
+    if bool == True:
+        print("\n\t\t\t===== Label Encoding =====","\nClass Names:-->",le.classes_)
+        for i in sample_data:
+            print(sentiment[i],' ', encoded_labels[i],'\n')
+
+    return labels  
+
+def dataset_split(feature_space,sentiment):
+    X_train,X_test,y_train,y_test = train_test_split(feature_space,sentiment,train_size = 0.8,
+                                                  test_size = 0.2,random_state =0)
+    return X_train,X_test,y_train,y_test
+
+lables = label_encoding(dataset.Sentiment,False)
+# Split the Feature into train and test set
+X_train,X_test,y_train,y_test = dataset_split(feature_space=feature_vector,sentiment=lables)
 
 from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import accuracy_score
