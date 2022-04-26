@@ -91,9 +91,9 @@ lables = label_encoding(dataset.Sentiment,False)
 X_train,X_test,y_train,y_test = dataset_split(feature_space=feature_vector,sentiment=lables)
 
 from sklearn.linear_model import SGDClassifier
-from sklearn.metrics import accuracy_score
-sgd_model = SGDClassifier(loss ='log',penalty='l2', max_iter=10)
-sgd_model.fit(X_train,y_train) 
+#from sklearn.metrics import accuracy_score
+#sgd_model = SGDClassifier(loss ='log',penalty='l2', max_iter=10)
+#sgd_model.fit(X_train,y_train) 
 
 import pickle
 # open a file, where you ant to store the data
