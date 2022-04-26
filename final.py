@@ -93,10 +93,10 @@ sgd_model.fit(X_train,y_train)
 
 import pickle
 # open a file, where you ant to store the data
-#file = open('rr_review_sgd.pkl', 'wb')
+file = open('rr_review_sgd.pkl', 'wb')
 
 # dump information to that file
-#pickle.dump(sgd_model, file)
+pickle.dump(sgd_model, file)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -109,8 +109,7 @@ input = st.text_input('Enter your sentence in the Bengali Language')
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # loading the model using pickle
-model = open('rr_review_sgd.pkl','rb')
-sgd = pickle.load(model)
+sgd = pickle.load(open('rr_review_sgd.pkl','rb'))
 
 
 # predict function
