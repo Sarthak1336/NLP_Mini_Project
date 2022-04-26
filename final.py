@@ -110,11 +110,8 @@ input = st.text_input('Enter your sentence in the Bengali Language')
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # loading the model using pickle
-try:
-    sgd = unpickler.load()
-except EOFError:
-    data = list()
-#sgd = pickle.load(open('rr_review_sgd.pkl','rb'))
+
+sgd = pickle.load(open('rr_review_sgd.pkl','rb'))
 
 
 # predict function
