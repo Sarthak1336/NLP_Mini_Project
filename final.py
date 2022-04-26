@@ -92,12 +92,12 @@ import sklearn.linear_model._stochastic_gradient
 sgd_model = SGDClassifier(loss ='log',penalty='l2', max_iter=10)
 sgd_model.fit(X_train,y_train) 
 
-#import pickle
+import pickle
 # open a file, where you ant to store the data
-#file = open('rr_review_sgd.pkl', 'wb')
+file = open('rr_review_sgd.pkl', 'wb')
 
 # dump information to that file
-#pickle.dump(sgd_model, file)
+pickle.dump(sgd_model, file)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -110,7 +110,11 @@ input = st.text_input('Enter your sentence in the Bengali Language')
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # loading the model using pickle
-sgd = pickle.load(open('rr_review_sgd.pkl','rb'))
+try:
+    sgd = unpickler.load()
+except EOFError:
+    data = list()
+#sgd = pickle.load(open('rr_review_sgd.pkl','rb'))
 
 
 # predict function
