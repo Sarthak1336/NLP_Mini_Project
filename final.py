@@ -94,7 +94,7 @@ sgd_model.fit(X_train,y_train)
 
 import pickle
 file = open('rr_review_sgd.pkl', 'wb')
-sgd = pickle.load(model)
+sgd = pickle.load()
 pickle.dump(sgd_model, file)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
