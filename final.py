@@ -96,7 +96,7 @@ import pickle
 file = open('rr_review_sgd.pkl', 'wb')
 
 # dump information to that file
-pickle.dump(sgd_model, file)
+#pickle.dump(sgd_model, file)
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
