@@ -95,8 +95,8 @@ sgd_model.fit(X_train,y_train)
 import pickle
 file = open('rr_review_sgd.pkl', 'wb')
 pickle.dump(sgd_model, file)
-sgd = pickle.load(open('rr_review_sgd.pkl','rb'))
-
+model = open('rr_review_sgd.pkl','rb')
+sgd = pickle.load(model)
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # design elements
