@@ -82,6 +82,7 @@ lables = label_encoding(dataset.Sentiment,False)
 
 cv,feature_vector = calc_trigram_tfidf(dataset.cleaned)
 feature_space=feature_vector
+sentiment=labels
 X_train,X_test,y_train,y_test = train_test_split(feature_space,sentiment,train_size = 0.8,
                                                   test_size = 0.2,random_state =0)
 
