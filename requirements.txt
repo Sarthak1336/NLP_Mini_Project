@@ -4,7 +4,7 @@ pickleshare==0.7.5
 pure-eval==0.2.2
 Pygments==2.12.0
 pyparsing==3.0.8
-pywin32==303
+pywin32==223
 pyzmq==22.3.0
 six==1.16.0
 tornado==6.1
