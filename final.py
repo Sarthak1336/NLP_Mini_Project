@@ -12,8 +12,6 @@ import numpy as np
 import six
 import re
 import tornado
-import pywin
-import pywin32_bootstrap
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 import json
