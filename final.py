@@ -12,6 +12,7 @@ import numpy as np
 import six
 import re
 import tornado
+import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 import json
